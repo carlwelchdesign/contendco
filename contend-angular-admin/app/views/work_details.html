@@ -1,0 +1,56 @@
+
+
+<div class="hl"></div>
+<div class="logo-titles container">
+
+	<img ng-show="(work_info.publisher_logo!='')" class='details_logo pl40 aa' ng-src="{{work_info.publisher_logo}}" style='padding-top:14px;padding-bottom:14px;' />
+	
+	<img ng-show="(work_info.project_logo!='')" class='details_logo bb' ng-src="{{work_info.project_logo}}" alt="{{work_info.title}}" style='padding-top:7px;padding-bottom:7px;' />
+	
+	<div class='details_title tk-proxima-nova tk-proxima-nova-bold' style='padding: 10px 0 0;'>
+	 	{{work_info.project_title}}
+	</div>
+
+</div>
+<button>ADD NEW</button>
+<div style="clear:both;"></div>
+
+<ul class="works_category works_category_details">
+
+	<li ng-repeat="work_detail in work_details" >
+<!-- 	<a href='javascript:void(0);' ng-click='javascript:showVideo("{{work_detail.video}}"); return false;' data-toggle='modal' data-target='#modalDialog'>
+ -->	<button>EDIT</button>
+		<a ref="{{work_detail.video}}" class="vid-view" ng-click="showVideo(work_detail.video)" data-toggle='modal' data-target='#modalDialog'>
+			<div class='works_item' item-roll>
+				<img ng-src="{{work_detail.thumb}}" />
+				<div class='detail_roll'>
+					<img ng-src='img/works_play_button.png' class='hoverPlayButton' />
+				</div>
+			</div>
+		</a>
+		<div class='works_item_title tk-proxima-nova tk-proxima-nova-bold'>
+			{{work_detail.title}}
+
+		</div>
+		<div class='works_item_details tk-proxima-nova tk-proxima-nova-light'>
+			{{work_detail.description}}
+		</div>
+
+	</li>
+
+</ul>
+
+<br style="clear:both;" />
+<a href="#/work" class="back_link"><img src="img/back_button_workspage.png" /></a>
+
+<div class="modal fade" id="modalDialog" tabindex="-1" role="dialog" aria-labelledby="videoLabel" aria-hidden="true" style="display:none">
+	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+</div>
+
+<script type="text/javascript">
+	jQuery(document).ready(function(){
+		$('#modalDialog').on('hidden.bs.modal', function (e) {
+			jQuery(this).html('<div class="modal-dialog"></div>');
+		});
+	});
+</script>

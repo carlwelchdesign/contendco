@@ -1,0 +1,100 @@
+<div class="contact row">
+	<div class="hl"></div>
+	<h2 class="section-title no-space tk-proxima-nova tk-proxima-nova-light">Contact Us</h2>
+	<h3>OH HEY!</h3>
+	<h4>Interested in our work or just want to say hello? <br/> Drop us a line.</h4>
+						
+	<div class="wrapper col-md-12">
+		<div id="main-contact">
+		
+			<!-- Form -->
+			<div id='success'>Talk to you soon!</div>
+			<form id="contact-form" onsubmit="return false;" method="post">
+
+				<div>
+					<label>
+						<span>NAME</span>
+						<input id="name" placeholder="" type="text" tabindex="1" required autofocus>
+					</label>
+				</div>
+				<div>
+					<label>
+						<span>EMAIL</span>
+						<input id="email" placeholder="" type="email" tabindex="2" required>
+					</label>
+				</div>
+				
+				<div>
+					<label>
+						<!-- <span>Message: (required)</span> -->
+						<textarea id="message" placeholder="" tabindex="5" required></textarea>
+					</label>
+				</div>
+				<div class="submit-holder">
+					<button name="submit" type="submit" id="contact-submit">SUBMIT</button>
+				</div>
+			</form>
+			<!-- /Form -->
+		
+		</div>
+		
+							
+		
+	</div>
+</div>
+<script>
+	(function() {
+		
+		
+		// Create input element for testing
+		var inputs = document.createElement('input');
+		
+		// Create the supports object
+		var supports = {};
+		
+		supports.autofocus   = 'autofocus' in inputs;
+		supports.required    = 'required' in inputs;
+		supports.placeholder = 'placeholder' in inputs;
+	
+		// Fallback for autofocus attribute
+		if(!supports.autofocus) {
+			
+		}
+		
+		// Fallback for required attribute
+		if(!supports.required) {
+			
+		}
+	
+		// Fallback for placeholder attribute
+		if(!supports.placeholder) {
+			
+		}
+		
+		
+		$('#contact-submit').click(function() {
+			if($("#name").val()!=""&&$("#email").val()!=""&&$("#telephone").val()!=""&&$("#website").val()!=""&&$("#message").val()!=""){
+				var data = {
+				    name: $("#name").val(),
+				    email: $("#email").val(),
+				    telephone: $("#telephone").val(),
+				    website: $("#website").val(),
+				    message: $("#message").val()
+				};
+				$.ajax({
+				    type: "POST",
+				    url: "email.php",
+				    data: data,
+				    success: function(html){
+				        $('#contact-form').fadeOut(function(){
+				       		$('#success').fadeIn();
+				        });
+				        
+				    }
+				});
+			}
+		});
+		
+	
+	})();
+</script>

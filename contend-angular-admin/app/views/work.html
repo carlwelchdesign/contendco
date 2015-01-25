@@ -1,0 +1,44 @@
+<div class="hl"></div>
+<button>ADD NEW</button>
+<h2 class="section-title no-space tk-proxima-nova tk-proxima-nova-light">Work</h2>
+<ul class="works_category" >
+	<li ng-repeat="work in works">
+		<button edit-button id="{{work.client_id}}" title="{{work.title}}" thumb="{{work.thumb}}">EDIT</button>
+		<a href="#/work_details/{{work.client_id}}">
+			<div class="works_item" item-roll>
+				<img ng-src="{{work.thumb}}"/>
+				<div class='detail_roll'></div>
+				<div class="item_title">
+					{{work.title}}
+				</div>
+			</div>
+		</a>
+	</li>
+</ul>
+
+<div id="work-edit-box">
+	<button id="close">CLOSE</button><button id="close">DELETE</button>
+	<form id="contact-form" onsubmit="return false;" method="post">
+		<div>
+
+			<label>
+				<button>UPLOAD IMAGE</button>
+				<br/>
+				<img id="thumb" src=""/>
+			</label>
+			<div class="hl"></div>
+			<label>
+				<span>Title</span>
+				<input id="title" placeholder="" type="text" tabindex="1" required autofocus>
+			</label>
+
+		</div>
+		<input type="submit" value="Submit">
+	</form>
+</div>
+<script type="text/javascript">
+	$('#close').click(function(){
+		$('#work-edit-box').hide();
+	});
+</script>
+

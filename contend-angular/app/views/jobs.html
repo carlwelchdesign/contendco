@@ -1,0 +1,106 @@
+<div class="contact row works_category">
+	<div class="hl"></div>
+	<h2 class="section-title no-space tk-proxima-nova tk-proxima-nova-light">Job Opportunities</h2>
+	<h3>WE ARE CURRENTLY LOOKING FOR:</h3>
+	
+						
+	<div class="">
+		<div id="jobs">
+			<p><span>POSITION: </span>VP, Partnerships &amp; Innovation</p>
+			<p><span>JOB DESCRIPTION: </span>	
+				Provide leadership in the development of business strategy and
+				innovation; review and analyze business data, market conditions and
+				financial data in order to conceptualize business models for targeted
+				accounts/clients; analyze and explore opportunities for new projects
+				and growth of the company both in technology and financial scale;
+				participate in the development of new ideas and provide analysis
+				with respect to commercializing the ideas through investment,
+				partnerships, distribution, and product launch; complete market
+				assessments, competitive research, business models, and due
+				diligence for new intellectual properties; provide financial and
+				business feasibility assessment of intellectual property; apply strong
+				knowledge of business administration, business data analysis, and
+				innovative client relationship strategies for native marketing and
+				advertising.</p>
+			<p><span>REQUIREMENT: </span>
+				Master’s in Business Administration, and one (1) year of work
+				experience in Corporate Development at either the Director or
+				Executive level. Experience must include: financial modeling;
+				pricing; accounting; creating financial prospectus for media
+				acquisitions; branding; investor relations; social media, new media,
+				and traditional media distribution; and preparation of investor
+				reports.
+			</p>
+			<p><span>COMPANY: </span>Contend LLC</p>
+			<p><span>JOB SITE: </span>Los Angeles, California</p>
+			<p><span>TO APPLY: </span>
+				Mail resume to and cover letter referencing “VP Partnerships and
+				Innovation” to Contend LLC, Attn: P. Alberstat, 202 West First
+				Street, 10th Flr, Suite 401, Los Angeles, CA 90012 (no calls,
+				principals only, EOE)
+			</p>
+		</div>
+	</div>
+						
+</div>											
+
+							
+<script>
+	(function() {
+		
+		
+		// Create input element for testing
+		var inputs = document.createElement('input');
+		
+		// Create the supports object
+		var supports = {};
+		
+		supports.autofocus   = 'autofocus' in inputs;
+		supports.required    = 'required' in inputs;
+		supports.placeholder = 'placeholder' in inputs;
+	
+		// Fallback for autofocus attribute
+		if(!supports.autofocus) {
+			
+		}
+		
+		// Fallback for required attribute
+		if(!supports.required) {
+			
+		}
+	
+		// Fallback for placeholder attribute
+		if(!supports.placeholder) {
+			
+		}
+		
+		
+		$('#contact-submit').click(function() {
+			if($("#name").val()!=""&&$("#email").val()!=""&&$("#telephone").val()!=""&&$("#website").val()!=""&&$("#message").val()!=""){
+				var data = {
+				    name: $("#name").val(),
+				    email: $("#email").val(),
+				    telephone: $("#telephone").val(),
+				    website: $("#website").val(),
+				    message: $("#message").val()
+				};
+				$.ajax({
+				    type: "POST",
+				    url: "email.php",
+				    data: data,
+				    success: function(html){
+				        $('#contact-form').fadeOut(function(){
+				       		$('#success').fadeIn();
+				        });
+				        
+				    }
+				});
+			}
+		});
+		
+	
+	})();
+</script>
+
+
+				</div>

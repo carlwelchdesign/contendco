@@ -1,0 +1,15 @@
+<div class="hl"></div>
+<h2 class="section-title no-space tk-proxima-nova tk-proxima-nova-light">Work</h2>
+<ul class="works_category" >
+	<li ng-repeat="work in works">
+		<a href="#/work_details/{{work.client_id}}">
+			<div class="works_item" item-roll>
+				<img ng-src="{{work.thumb}}"/>
+				<div class='detail_roll'></div>
+				<div class="item_title">
+					{{work.title}}
+				</div>
+			</div>
+		</a>
+	</li>
+</ul>
